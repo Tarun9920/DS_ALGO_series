@@ -1,0 +1,13 @@
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& A, int n) {
+     vector<int>B;   
+        int i,j= n,k;
+        for(i=0;i<n;i++)
+        {
+            B.push_back(A[i]);
+            B.push_back(A[n+i]);
+        }
+        return B;
+    }
+};

@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int sumOddLengthSubarrays(vector<int>& A) {
+        int i,j,k,n=A.size(),m,t,s;
+        s=t=0;
+        for(i=0;i<n;i++)
+        {
+            cout<<"using the index : "<<i<<"\n";
+            for(j=1;j<=n;j+=2)// group
+            {
+                int start= i;
+                if(i+j<=n)
+                {
+                    t= min(j,i);
+                    s+=(t*A[i]);
+                }
+                cout<<"Group :\t"<<j<<"\n";
+                m=t=0;
+                for(int p=i;p<n;p++)
+                {
+                    m++;
+                    t+=A[p];
+                    if(m== j) break;
+                }
+                cout<<"particular sum is :\t"<<t<<"\n";
+                if(m==j)
+                s+=t;
+            }
+        }
+        return s;
+    }
+};
