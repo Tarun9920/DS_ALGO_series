@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<int> decompressRLElist(vector<int>& A) {
+     vector<int>B;
+        int i,h,k;
+        for(i=0;i<A.size();i+=2)
+        {
+            if(i+1< A.size())
+            {
+            for(int j=0;j<A[i];j++)
+                B.push_back(A[i+1]);
+            }
+        }
+        return B;
+    }
+};

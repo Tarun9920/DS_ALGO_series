@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> createTargetArray(vector<int>& A, vector<int>& B) {
+        int i,j,k=0;
+        vector<int>C(B.size());
+        for(i=0;i<B.size();i++) C[i]=-1;
+        for(i=0;i<B.size();i++)
+        {
+            if(C[B[i]]!= -1)
+            {
+                for(k=B.size()-2;k>=B[i];k--)
+                 C[k+1]=C[k];
+                
+            }
+            C[B[i]]= A[i];
+            
+        }
+        return C;
+    }
+};

@@ -1,0 +1,13 @@
+class Solution {
+public:
+    string restoreString(string s, vector<int>& B) {
+        string A;
+        A=s;
+        int i,h,j,k;
+        for(i=0;i<s.size();i++)
+        {
+            A[B[i]]= s[i];
+        }
+        return A;
+    }
+};

@@ -1,0 +1,13 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& A) {
+        int i,j=0,n= A.size();
+        vector<int>B;
+        for(i=0;i<n;i++)
+        {
+            j+=A[i];
+            B.push_back(j);
+        }
+        return B;
+    }
+};

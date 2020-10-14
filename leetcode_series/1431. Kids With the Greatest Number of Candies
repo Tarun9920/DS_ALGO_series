@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& C, int E) {
+        vector<bool>A;
+        int i,j=0,k,n= C.size();
+        for(i=0;i<n;i++)
+        {
+            if(j<C[i]) j= C[i];
+        }
+        for(i=0;i<n;i++)
+        {
+            if(C[i]+ E >=j) A.push_back(true);
+            else A.push_back(false);
+            
+        }
+        return A;
+        
+    }
+};

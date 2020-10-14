@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int numberOfSteps (int A) {
+        int k=0;
+        while(A>0)
+        {
+            if(A%2==0) A/=2;
+            else A--;
+            k++;
+        }
+        return k;
+    }
+};
