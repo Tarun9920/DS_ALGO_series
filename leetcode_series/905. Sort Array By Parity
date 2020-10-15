@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& A) {
+        vector<int>B(A.size());
+        int i,j,k=0,n= A.size();
+        j= n-1;
+        for(i=0;i<n;i++)
+        {
+            if(A[i]%2==0)
+                B[k++]= A[i];
+            else B[j--]=A[i];
+        }
+  return B;      
+    }
+};
