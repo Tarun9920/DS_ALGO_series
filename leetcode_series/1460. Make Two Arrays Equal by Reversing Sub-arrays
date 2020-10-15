@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool canBeEqual(vector<int>& A, vector<int>& B) {
+     map<int,int>mymap;
+        int i,j,k;
+        if(A.size()!= B.size()) return false;
+        for(i=0;i<A.size();i++)
+        {
+            mymap[A[i]]++;
+        }
+        for(i=0;i<B.size();i++)
+        {
+            mymap[B[i]]--;
+            if(mymap[B[i]] ==0) mymap.erase(B[i]);
+        }
+        
+        if(mymap.size()==0) return true;
+        return false;
+    }
+};
