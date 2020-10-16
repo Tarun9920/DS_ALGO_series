@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int arrayPairSum(vector<int>& A) {
+        vector<int>B= A;
+        sort(B.begin(),B.end());
+        int k=0,n=B.size();
+        for(int i=0;i<n;i+=2)
+        {
+            k+=B[i];
+        }
+        return k;
+    }
+};
