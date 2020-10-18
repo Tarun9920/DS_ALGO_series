@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> sortArrayByParityII(vector<int>& A) {
+    int i,j,k;
+        i=-2;
+        k=-1;
+        for(j=0;j<A.size();j++)
+        {
+            if(j%2 != A[j]%2)
+            {
+                for(k= j+1; k< A.size();k+=2)
+                {
+                    if(j%2 == A[k]%2) 
+                    {
+                        swap(A[j],A[k]); break;
+                    }
+                }
+            }
+        }
+        return A;
+      //  return A;
+    }
+};
