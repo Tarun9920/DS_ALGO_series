@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+    int Data;
+    Node* Left;
+    Node* Right;
+
+    Node(int value)
+    {
+        Data=value;
+        Left=NULL;
+        Right=NULL;
+    }
+};
+
+///Here we will flatten our Binary Tree
+void Flatten(Node* root)
+{
+    if(root==NULL || (root->Left==NULL && root->Right==NULL))
+        return;
+
+   if(root->Left!=NULL)
+   {
+       Flatten(root->Left);
+       Node* temp=root->Right;
+       root->Right=root->Left;
+       root->Left=NULL;
+
+       Node* t=root->Right;
+
+       while(t->Right!=NULL) 
+       {
+            t=t->Right;
+       }
+
+       t->Right=temp;  
+   }
+
+   Flatten(root->Right);
+}
+
+///Here we will Print our Binary Tree using Inorder Traversal.
+void InOrderPrint(Node* root)
+{
+    if(root==NULL)
+        return;
+
+    InOrderPrint(root->Left);
+    cout<<root->Data<<" ";
+    InOrderPrint(root->Right);
+}
+
+int main()
+{
+    Node* root=new Node(4);
+    root->Left=new Node(9);
+    root->Right=new Node(5);
+    root->Left->Left=new Node(1);
+    root->Left->Right=new Node(3);
+    root->Right->Right=new Node(6);
+
+    Flatten(root);
+    InOrderPrint(root);
+
+}
