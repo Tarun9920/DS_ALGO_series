@@ -1,0 +1,30 @@
+class Solution {
+public:
+    vector<int> luckyNumbers (vector<vector<int>>& A) {
+        int b,i,p,j,k,m,n;
+        m= A.size();
+        vector<int>V;
+        n= A[0].size();
+        for(i=0;i<m;i++)
+        {
+            // find min element in row... and take its column id
+            k=0;
+            b= A[i][0];
+            for(j=0;j<n;j++)
+            {
+                if(b> A[i][j])
+                {
+                    b= A[i][j]; k= j;
+                }
+            }
+            // check if it is largest in col..
+            for( p=0;p<m;p++)
+            {
+                if(b< A[p][k]) break;
+            }
+            if(p== m)
+                V.push_back(b);
+        }
+        return V;
+    }
+};

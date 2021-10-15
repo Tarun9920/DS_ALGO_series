@@ -1,0 +1,28 @@
+class RecentCounter {
+public:
+    vector<int>A;
+    RecentCounter() {
+        A.clear();
+    }
+    
+    int ping(int t) {
+        A.push_back(t);
+        int h,l,m,d= t-3000,r=-1;
+        h= A.size()-1;
+        l=0;
+        while(l<=h)
+        {
+            m= (l+h)/2;
+            if(A[m]>= d) { h= m-1;}
+            else
+                l = m+1;
+        }
+        return A.size()-h-1;
+    }
+};
+
+/**
+ * Your RecentCounter object will be instantiated and called as such:
+ * RecentCounter* obj = new RecentCounter();
+ * int param_1 = obj->ping(t);
+ */

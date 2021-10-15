@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int numJewelsInStones(string J, string S) {
+        int  A[256],B[256],i,j,k;
+        for(i=0;i<256;i++) A[i]=B[i]=0;
+        
+        for(i=0;i<S.size();i++)
+            A[S[i]]++;
+        k=0;
+        for(i=0;i<J.size();i++)
+        {
+            k+=A[J[i]];
+        }
+        return k;
+    }
+};

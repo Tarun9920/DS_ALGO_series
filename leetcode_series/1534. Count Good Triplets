@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int countGoodTriplets(vector<int>A, int a, int b, int c) {
+        int p=0,n=A.size(),i,j,k;
+        for(i=0;i<n;i++)
+        {
+            for(j=i+1;j<n;j++)
+            {
+                for(k=j+1;k<n;k++)
+                {
+                    if(abs(A[i] - A[j])<=a && abs(A[j]-A[k])<=b && abs(A[i]-A[k])<=c) {p++;}
+                }
+            }
+        }
+        return p;
+    }
+};

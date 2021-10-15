@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string freqAlphabets(string s) {
+        string p;
+        char A[p.size()];
+        int i,h=0,j,k;
+        for(i=0;i<s.size();i++)
+        {
+            if(s[i]=='#')
+            {
+                k= (s[i-2]-'0')*10 + (s[i-1]-'0'  );
+                s[i-2]=s[i-1]='_';
+                s[i]= char(k+'a' -1);
+//                s[i-3]= char('a' + s[i-3] -'0' -1);
+            }
+        }
+        cout<<"string became ::\t"<<s<<"\n";
+        for(i=0;i<s.size();i++)
+        {
+            if(s[i]>='1' && s[i]<='9')
+                p+=('a' + s[i]-'1');
+            else if(s[i]!='_') p+=s[i];
+        }
+        return p;
+    }
+};

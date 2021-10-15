@@ -1,0 +1,17 @@
+class Solution {
+public:
+    string destCity(vector<vector<string>>& A) {
+   set<string>my;
+        for(int i=0;i<A.size();i++)
+        {
+            my.insert(A[i][0]);
+        }
+      
+        for(int i=0;i<A.size();i++)
+        {
+        if(my.find(A[i][1])== my.end())
+            return A[i][1];
+        }
+        return "-1";
+    }
+};

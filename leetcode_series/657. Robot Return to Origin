@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool judgeCircle(string A) {
+        int a,b;
+        a=b=0;
+        for(int i=0;i< A.size();i++)
+        {
+            if(A[i]=='L') a++;
+            else if(A[i]=='R') a--;
+            else if(A[i]=='U') b++;
+            else b--;
+        }
+        cout<<"a= "<<a<<"\tb= "<<b<<"\n"; 
+        if(a==0 && b==0) return true;
+        return false;
+    }
+};

@@ -1,0 +1,14 @@
+class Solution {
+public:
+    vector<int> replaceElements(vector<int>& A) {
+        vector<int>V(A.size());
+        int i,j,k=-1,n=A.size();
+        V[n-1]= -1;
+        for(i=n-2;i>=0;i--)
+        {
+          k= max(k,A[i+1]);
+            V[i]= k;
+        }
+        return V;
+    }
+};

@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& C) {
+ map<int,int>M;
+        set<int>S;
+        for(int i=0;i<C.size();i++) M[C[i]]++;
+        map<int,int>::iterator it;
+        for(it= M.begin();it!=M.end();it++)
+        {
+            if(S.find(it->second) == S.end()) S.insert(it->second);
+            else return false;
+        }
+        return true;
+    }
+};
