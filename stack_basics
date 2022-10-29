@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+void add_element(int x, stack<int>&s)
+{
+    s.push(x);
+}
+
+void pop_element(stack<int>&s)
+{
+    if(s.size()==0) {
+        cout<<"No element!!!\n";
+        return ;
+    }
+    int t= s.top();
+    s.pop();
+    cout<<"Element removed is :: "<<t<<"\n";
+}
+
+void top_element(stack<int>&s)
+{
+    if(s.size()==0) {
+        cout<<"Stack is empty!!!!";
+    }
+    cout<<"TOP ELEMENT IS :: "<<s.top()<<"\n";
+
+}
+int main()
+{
+    // remove element from stack
+    stack<int>s;
+    add_element(50,s);
+    add_element(40,s);
+    add_element(30,s);
+    add_element(20,s);
+
+    top_element(s);
+    pop_element(s);
+
+}
